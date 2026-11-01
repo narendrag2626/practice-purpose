@@ -27,6 +27,7 @@ test('verify login with valid credentials',async({homepage,loginpage})=>{
     expect(actualresult).toBe(`Welcome ${uname}`)
     console.log(actualresult)
     console.log(actualresult)
+     console.log(actualresult)
     await loginpage.logout()
 })
 })

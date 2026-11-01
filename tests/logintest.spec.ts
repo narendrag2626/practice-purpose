@@ -24,10 +24,7 @@ test.describe.serial("verify signup and login",async()=>{
 test('verify login with valid credentials',async({homepage,loginpage})=>{
     let actualresult=await loginpage.login(username,password)
     //expect(actualresult).toContain(username)
-    expect(actualresult).toBe(`Welcome ${uname}`)
-    console.log(actualresult)
-    console.log(actualresult)
-     console.log(actualresult)
+    expect(actualresult).toBe(`Welcome ${uname}`) 
     await loginpage.logout()
 })
 })

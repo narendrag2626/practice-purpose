@@ -20,6 +20,8 @@ let upwd=signupdata.upwd
 test.describe.serial("verify signup and login",async()=>{
   test("verify user registration",async({loginpage})=>{
     await loginpage.signup(uname,upwd)
+    console.log(uname,"testing purpose branch")
+    
 })
 test('verify login with valid credentials',async({homepage,loginpage})=>{
     let actualresult=await loginpage.login(username,password)

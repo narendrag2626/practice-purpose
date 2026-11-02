@@ -8,5 +8,13 @@
     {
         "uname":"tatikka",
         "upwd":"tatikka"
+    },
+    "changepassworddata":
+    {
+        "email":"Narendrag2626@gmail.com",
+        "contactnumber":"9866074336",
+        "dateofbirth":"26-02-1998",
+        "newpassowrd":"Narendra@9866"
+
     }
 }

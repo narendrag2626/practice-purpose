@@ -1,5 +1,6 @@
 import { Page,Locator } from "@playwright/test";
 export class LoginPage{
+   //loginpage
     page:Page
     loginlink:Locator
     loginusername:Locator
@@ -7,12 +8,12 @@ export class LoginPage{
     loginbutton:Locator
     welcomelink:Locator
     logoutlink:Locator
-
+   //signup
     signuplink:Locator
     username:Locator
     password:Locator
     signinbutton:Locator
-
+   //forgotpassword
    forgetpasswordlink:Locator
    emailinput:Locator
    contactnumberinput:Locator
@@ -21,6 +22,15 @@ export class LoginPage{
    newpasswordinput:Locator
    finalsubmitbutton:Locator
    successmessagealert:Locator
+   //updateprofile
+   loginemailinput:Locator
+   loginpasswordinput:Locator
+   signinbuttoninlogin:Locator
+   gearicon:Locator
+   myprofilelink:Locator
+   profilepic:Locator
+   updatebutton:Locator
+
    
     constructor(page:Page)
     {
@@ -45,6 +55,14 @@ export class LoginPage{
        this.newpasswordinput=this.page.getByPlaceholder("Password")
        this.finalsubmitbutton=this.page.locator(".btn.btn-primary.btn-block.btn-flat")
        this.successmessagealert=this.page.locator(".alert.alert-success.alert-dismissable")
+
+       this.loginemailinput=this.page.getByPlaceholder("Email ID")
+       this.loginpasswordinput=this.page.getByPlaceholder("Password")
+       this.signinbuttoninlogin=this.page.getByRole('button',{name:"Sign In"})
+       this.gearicon=this.page.locator(".fa.fa-gear")
+       this.myprofilelink=this.page.getByRole('link',{name:"My Profile"})
+       this.profilepic=this.page.locator("#profile_pic")
+       this.updatebutton=this.page.getByRole('button',{name:"Update"})
 
     }
     async login(username:string,password:string):Promise<string>
@@ -84,6 +102,17 @@ export class LoginPage{
       await this.submitbutton.click()
       await this.newpasswordinput.fill(newpassword)
       await this.finalsubmitbutton.click()
+
+   }
+   async updateprofile(email:string,password:string,profilepath):Promise<void>
+   {
+     await this.loginemailinput.fill(email)
+     await this.loginpasswordinput.fill(password)
+     await this.signinbuttoninlogin.click()
+     await this.gearicon.click()
+     await this.myprofilelink.click()
+     await this.profilepic.setInputFiles(profilepath)
+     await this.updatebutton.click()
 
    }
 

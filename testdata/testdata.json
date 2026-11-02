@@ -16,5 +16,12 @@
         "dateofbirth":"26-02-1998",
         "newpassowrd":"Narendra@9866"
 
+    },
+    "updateprofiledata":
+    {
+        "email":"Narendrag2626@gmail.com",
+        "password":"Narendra@9866",
+        "profilepath":"C:/Users/sandh/Pictures/IMG49kb.jpg"
+    
     }
 }

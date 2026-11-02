@@ -1,5 +1,6 @@
 import{test} from '../fixtures/testfixures'
 import { expect } from '@playwright/test'
+import path from 'path'
 import {updateprofiledata} from '../testdata/testdata.json'
 let email=updateprofiledata.email
 let password=updateprofiledata.password

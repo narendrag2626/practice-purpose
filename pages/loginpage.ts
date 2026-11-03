@@ -17,7 +17,8 @@ export class LoginPage{
    myprofilelink:Locator
    profilepic:Locator
    updatebutton:Locator
-
+ 
+   logoutlink:Locator
    
     constructor(page:Page)
     {
@@ -39,6 +40,7 @@ export class LoginPage{
        this.profilepic=this.page.locator("#profile_pic")
        this.updatebutton=this.page.getByRole('button',{name:"Update"})
 
+       this.logoutlink=this.page.getByRole('link',{name:" Logout"}) 
     }
    
    
@@ -63,6 +65,14 @@ export class LoginPage{
      await this.profilepic.setInputFiles(profilepath)
      await this.updatebutton.click()
 
+   }
+   async clickLogout(email:string,password:string):Promise<void>
+   {
+     await this.loginemailinput.fill(email)
+     await this.loginpasswordinput.fill(password)
+     await this.signinbuttoninlogin.click()
+     await this.gearicon.click()
+     await this.logoutlink.click()
    }
 
 }
